@@ -89,7 +89,7 @@ class TopStoriesWidget extends WP_Widget {
 	   while($count < 6) {
 		$most_recent_term = get_terms('issue', array('number' => $pass_through, 'order' => 'DESC'));	
 		$most_recent_term = str_replace('-', '/', $most_recent_term[$pass_through-1]->name);
-		try { $all_results = $this->service->data_ga->get('ga:' . 3111434, date('Y-m-d', time()-18140000), date('Y-m-d'),'ga:pageviews', array('dimensions' => 'ga:pagePath', 'max-results'=>100, 'filters'=>'ga:pagePath=@'.$most_recent_term.';ga:pagePath!@preview=true;ga:hostname!=blogs.gwhatchet.com;ga:hostname!=projects.gwhatchet.com;ga:hostname!=media.gwhatchet.com;ga:hostname!=archives.gwhatchet.com;ga:pagePath!@?', 'sort' => '-ga:pageviews'));
+		try { $all_results = $this->service->data_ga->get('ga:' . 'ga_goes_here', date('Y-m-d', time()-18140000), date('Y-m-d'),'ga:pageviews', array('dimensions' => 'ga:pagePath', 'max-results'=>100, 'filters'=>'ga:pagePath=@'.$most_recent_term.';ga:pagePath!@preview=true;ga:hostname!=blogs.gwhatchet.com;ga:hostname!=projects.gwhatchet.com;ga:hostname!=media.gwhatchet.com;ga:hostname!=archives.gwhatchet.com;ga:pagePath!@?', 'sort' => '-ga:pageviews'));
 	   } catch (apiException $e) {
 	    ?> An error has occured. Please try again later. <?php
 	   }
